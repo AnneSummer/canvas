@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: relative;
+			width: 1000px;
+			height:  600px;
+			margin: 0 auto;
+		}
+		#skycanvas{
+			position: absolute;
+			left: 0;
+			top:0;
+			border: 1px solid #000;	
+		}
+		#landcanvas{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: 999;
+		}
+		#begin{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 1000px;
+			height: 600px;
+			display: none;
+			background: url(images/splash_screen.jpg);
+			background-size: 1000px 600px;
+		}
+		
+		#begin .title{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1000px;
+			height: 600px;
+			background: url(images/title.png);
+			background-size: 1000px 600px;
+			
+		}
+		#begin span{
+			position: absolute;
+			left: 100px;
+			top: 450px;
+			width: 200px;
+			height: 100px;
+			font: 40px "Microsoft Yahei";
+			color: #fff;
+			text-align: center;
+			line-height: 100px;
+			background: #000;
+			border: 1px solid #fff;
+			border-radius: 10px;
+		}
+		#begin span:hover{
+			background: green;
+		}
+		#begin p{
+			position: absolute;
+			left: 550px;
+			top: 450px;
+			font: 20px "Microsoft Yahei";
+			color: #fff;
+			line-height: 30px;
+		}	
+		
+	</style>
+</head>
+<body>
+	<audio src="audio/boss_loop.ogg" id="boss_loop" ></audio>
+	<audio src="audio/level_1_loop.ogg" id="level_1_loop"></audio>
+	<audio src="audio/level_1_preloop.ogg" id="level_1_preloop"></audio>
+	<audio src="audio/level_2_loop.ogg" id="level_2_loop"></audio>
+	<audio src="audio/level_passed.ogg" id="level_passed"></audio>
+	<audio src="audio/loading_music.ogg" id="loading_music"  ></audio>
+	<audio src="audio/shot.mp3" id="shot"  ></audio>
+	<audio src="audio/boom.mp3" id="boom"  ></audio>
+	<audio src="audio/open.mp3" id="open"  ></audio>
+	<div>
+		<canvas width="1000" height="600" id="skycanvas"></canvas>
+		<canvas width="1000" height="98" id="landcanvas"></canvas>
+		<div id="begin">
+			<div class="title"></div>
+			<span>开始游戏</span>
+			<p>游戏说明：箭头键控制移动</br>空格键控制开火/射击</p>
+		</div>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/Background.js"></script>
+	<script src="js/Land.js"></script>
+	<script src="js/Enemy.js"></script>
+	<script src="js/Ship.js"></script>
+	<script src="js/Shot.js"></script>
+	<script src="js/Scene.js"></script>
+	<script src="js/Prop.js"></script>
+	<script>
+		var game = new Game();
+	</script>
+</body>
+</html>
